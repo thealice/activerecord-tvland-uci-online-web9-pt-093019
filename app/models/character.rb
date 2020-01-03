@@ -6,8 +6,9 @@ class Character < ActiveRecord::Base
     "#{self.name} always says: #{self.catchphrase}"
   end
 
-  def build_show
-
+  def build_show(name)
+    character = Character.new
+    character.build_show(:name => name)
   end
 
   def build_network
